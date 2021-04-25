@@ -5,8 +5,12 @@ Projeto que utiliza node.js + Vue.js afim de criar um chat publico de texto
 Experimentar backend nodejs + socket.io e treinamento de conceitos
 
 **Recursos Implementados**
+  - eventos para detectar a digitação dos usuarios
   - chat de texto
   - armazenamento das mensagens locais
+
+**Recursos para sempre implementados**
+ - chat de video usando WebRTC
 
 
 ## Executando o projeto:
