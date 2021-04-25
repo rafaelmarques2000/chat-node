@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  node_serve:
+    build: .
+    user: "node"
+    environment:
+        - NODE_ENV=development
+    volumes:
+        - ./:/home/node/app
+    ports:
+        - "3000:3000"
+    command: "npm start"
+    networks:
+        - network_chat
+  db_postgres_sql:
+    image: postgres:12
+    container_name: pgsql_chat_api
+    restart: always
+    tty: true
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=chat_db
+      - PGDATA=/var/lib/postgresql/data/db-files/
+    networks:
+      - network_chat
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  network_chat:
+    name: network_chat
+    driver: bridge
