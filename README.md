@@ -13,8 +13,8 @@ Experimentar backend nodejs + socket.io e treinamento de conceitos
 
 ### Pré-requisitos
 - vue-cli
-- docker
-- docker composer (minimo 1.26)
+- docker(minimo 19.x)
+- docker composer (minimo 1.26.x)
 
 ### Backend
   **Linux**
